@@ -9,17 +9,17 @@ BASE_COMMIT = '@~'
 
 l_all_list = ''
 
-def write_out(l):
+def write_out(l: str):
     with open(OUT_FILE, 'a', encoding='utf-8') as f_out:
         f_out.write(l)
         f_out.write('\n')
 
-def get_base_commit_time():
+def get_base_commit_time() -> int:
     cmd = 'git -C ' + REPO_DIR + ' log -1 ' + BASE_COMMIT + ' --date=unix | grep Date:'
     res = subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)
     return int(str(res.stdout)[10:-3])
 
-def get_commit_time(num, file):
+def get_commit_time(num: str, file: str) -> int:
     cmd = 'git -C ' + REPO_DIR + ' blame -pwL ' + num + ',' + num + ' ' + file + ' | grep author-time'
     res = subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)
     return int(str(res.stdout)[14:-3])
