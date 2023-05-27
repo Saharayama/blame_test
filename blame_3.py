@@ -25,7 +25,6 @@ def get_commit_time(num: str, file: str) -> int:
     return int(str(res.stdout)[14:-3])
 
 base_commit_time = get_base_commit_time()
-print(base_commit_time)
 
 with open(LIST_FILE, 'r', encoding='utf-8') as f_list:
     for l_list in f_list:
@@ -36,8 +35,6 @@ with open(LIST_FILE, 'r', encoding='utf-8') as f_list:
         else:
             continue
     l_all_list = l_all_list[:-1]
-
-# print(l_all_list)
 
 with open(SRC_FILE, 'r', encoding='utf-8') as f_src:
     for l_src in f_src:
