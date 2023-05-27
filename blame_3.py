@@ -9,7 +9,7 @@ BASE_COMMIT = '@~'
 
 l_all_list = ''
 
-def write_out(l: str):
+def write_out(l: str) -> None:
     with open(OUT_FILE, 'a', encoding='utf-8') as f_out:
         f_out.write(l)
         f_out.write('\n')
