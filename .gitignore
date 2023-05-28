@@ -1,1 +1,4 @@
-*.txt
+/src.txt
+/list.txt
+/out.txt
+.venv/
