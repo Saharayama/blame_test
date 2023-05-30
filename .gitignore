@@ -1,4 +1,3 @@
-/src.txt
-/list.txt
-/out.txt
+/*.txt
 .venv/
+!requirements.txt

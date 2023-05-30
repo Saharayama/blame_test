@@ -56,8 +56,8 @@ with open(SRC_FILE, "r", encoding="utf-8") as f_src:
             if re.findall(l_all_list, l_src):
                 write_out(l_src)
             else:
-                num_src = l_src.split(",")[1]
-                file_src = l_src.split(",")[2]
+                num_src = l_src.split(",")[2]
+                file_src = l_src.split(",")[1]
                 commit_time = get_commit_time(num_src, file_src)
                 if commit_time > base_commit_time:
                     write_out(l_src)
