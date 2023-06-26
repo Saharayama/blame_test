@@ -55,6 +55,7 @@ with open(SRC_FILE, "r", encoding="utf-8") as f_src:
         if l_src != "":
             if re.findall(l_all_list, l_src):
                 write_out(l_src)
+                print("list", l_src)
             else:
                 num_src = l_src.split(",")[2]
                 file_src = l_src.split(",")[1]
